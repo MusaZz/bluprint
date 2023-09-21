@@ -6,16 +6,18 @@ import Home from "./Pages/Home";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 
+//Components
+import Container from "./components/Container";
+
 const App = () => {
   return (
-    <div>
-      <SignIn />
-      {/* <Routes>
+    <Container>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
-      </Routes> */}
-    </div>
+      </Routes>
+    </Container>
   );
 };
 
