@@ -8,13 +8,13 @@ import Wallpaper from "../components/Register/Wallpaper";
 //React Router
 import { Link } from "react-router-dom";
 
-const SignIn = () => {
+const Register = () => {
   return (
     <div>
       <Header />
       <main className="my-10">
         <div className=" space-y-20 w-1/3 scale-105">
-          <Title type="sign-up" />
+          <Title type="register" />
           <div className="w-full">
             <form className="space-y-10">
               <div className=" flex justify-between w-full">
@@ -23,11 +23,11 @@ const SignIn = () => {
               </div>
               <Input label="Email" />
               <Input label="Password" />
-              <Button type="sign-up" />
+              <Button type="register" />
               <div className="text-base font-medium">
                 <p>
                   Have an account?
-                  <Link to="/sign-in">
+                  <Link to="/login">
                     <span className="underline">Sign in here.</span>
                   </Link>
                 </p>
@@ -35,10 +35,10 @@ const SignIn = () => {
             </form>
           </div>
         </div>
-        <Wallpaper type="sign-up" />
+        <Wallpaper type="register" />
       </main>
     </div>
   );
 };
 
-export default SignIn;
+export default Register;

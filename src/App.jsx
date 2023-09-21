@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 //Pages
 import Home from "./Pages/Home";
-import SignIn from "./Pages/SignIn";
-import SignUp from "./Pages/SignUp";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 
 //Components
 import Container from "./components/Container";
@@ -14,8 +14,8 @@ const App = () => {
     <Container>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Container>
   );

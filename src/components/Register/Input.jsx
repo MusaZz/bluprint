@@ -1,4 +1,5 @@
-const Input = ({ label, type }) => {
+const Input = ({ label }) => {
+
   return (
     <label className=" flex flex-col space-y-2 font-black uppercase">
       <span>{label}</span>

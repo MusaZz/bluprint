@@ -7,25 +7,25 @@ import Wallpaper from "../components/Register/Wallpaper";
 
 //React Router
 import { Link } from "react-router-dom";
-const SignIn = () => {
+const Login = () => {
   return (
     <div>
       <Header />
       <main className="my-10">
         <div className=" space-y-20 w-1/3 scale-105">
-          <Title type="sign-in" />
+          <Title type="login" />
           <div className="w-full">
             <form className="space-y-10">
               <Input label="Email" />
               <Input label="Password" />
-              <Button type="sign-in" />
+              <Button type="login" />
               <div className=" underline space-y-10 font-medium">
                 <a href="#">Forgot my password</a>
               </div>
               <div className="text-base font-medium">
                 <p>
-                  global.new-here{" "}
-                  <Link to="/sign-up">
+                  global.new-here
+                  <Link to="/register">
                     <span className="underline">
                       Create an accout to get started
                     </span>
@@ -35,10 +35,10 @@ const SignIn = () => {
             </form>
           </div>
         </div>
-        <Wallpaper type="sign-in" />
+        <Wallpaper type="login" />
       </main>
     </div>
   );
 };
 
-export default SignIn;
+export default Login;
