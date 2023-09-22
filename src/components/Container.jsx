@@ -2,7 +2,7 @@ import React from "react";
 
 const Container = ({ children }) => {
   return (
-    <div className=" max-w-screen-2xl  mx-auto font-satoshi">{children}</div>
+    <div className=" max-w-screen-xl  mx-auto font-satoshi">{children}</div>
   );
 };
 

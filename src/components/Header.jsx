@@ -11,6 +11,9 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { PiShoppingCartBold } from "react-icons/pi";
 import { FiSearch } from "react-icons/fi";
 
+//React Router
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <div className="flex justify-between py-10">
@@ -20,24 +23,26 @@ const Header = () => {
       <nav>
         <ul className="h-full flex gap-20">
           <li className="h-full flex items-center">
-            <a href="#" className="text-3xl font-black">
-              Products<span className=" text-[#FFC700]">.</span>
-            </a>
+            <Link to="/products">
+              <span className="text-3xl font-black">
+                Products<span className=" text-[#FFC700]">.</span>
+              </span>
+            </Link>
           </li>
           <li className="h-full flex items-center">
-            <a href="#" className="text-3xl font-black">
+            <span className="text-3xl font-black">
               Collections<span className=" text-[#FFC700]">.</span>
-            </a>
+            </span>
           </li>
           <li className="h-full flex items-center">
-            <a href="#" className="text-3xl font-black">
+            <span className="text-3xl font-black">
               Account<span className=" text-[#FFC700]">.</span>
-            </a>
+            </span>
           </li>
           <li className="h-full flex items-center">
-            <a href="#" className="text-3xl font-black">
+            <span className="text-3xl font-black">
               Help<span className=" text-[#FFC700]">.</span>
-            </a>
+            </span>
           </li>
         </ul>
       </nav>

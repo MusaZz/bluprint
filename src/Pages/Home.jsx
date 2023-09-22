@@ -23,8 +23,8 @@ const Home = () => {
   console.log(user);
 
   return (
-    <div>
-      <Header />
+    <div className="text-6xl text-red-950">
+     Home
     </div>
   );
 };
