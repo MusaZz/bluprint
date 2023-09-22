@@ -7,6 +7,40 @@ import Size from "./Size";
 //Hooks
 import { useState } from "react";
 
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+import { sizeActions } from "../../redux/slices/sizeSlice";
+
+// Fake Data
+
+const fakeSizes = [
+  {
+    id: 1,
+    name: "Extra Small",
+    size: "xs",
+  },
+  {
+    id: 2,
+    name: "Small",
+    size: "s",
+  },
+  {
+    id: 3,
+    name: "Medium",
+    size: "m",
+  },
+  {
+    id: 4,
+    name: "Large",
+    size: "l",
+  },
+  {
+    id: 5,
+    name: "Extra Large",
+    size: "xl",
+  },
+];
+
 // Styles
 const styles = {
   btn: "flex justify-between items-center py-4 w-full",
@@ -17,8 +51,16 @@ const styles = {
 const Colors = () => {
   const [showSize, setShowSize] = useState(false);
 
+  const state = useSelector((state) => state.size);
+
+  const dispatch = useDispatch();
+
   const toggleSize = () => {
     setShowSize(!showSize);
+  };
+
+  const setSize = (size) => {
+    dispatch(sizeActions.addSize(size));
   };
 
   return (
@@ -34,11 +76,17 @@ const Colors = () => {
       </button>
       {showSize && (
         <ul className={styles.ul}>
-          <Size title="Extra Small" size="xs" />
-          <Size title="Small" size="s" />
-          <Size title="Medium" size="m" />
-          <Size title="Large" size="l" />
-          <Size title="Extra Large" size="xl" />
+          {fakeSizes.map((size) => (
+            <Size
+              click={() => {
+                setSize(size.name);
+              }}
+              key={size.id}
+              title={size.name}
+              size={size.size}
+              selected={state.includes(size.name)}
+            />
+          ))}
         </ul>
       )}
     </div>

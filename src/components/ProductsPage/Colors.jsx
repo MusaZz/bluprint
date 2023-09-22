@@ -4,8 +4,41 @@ import { BsChevronUp } from "react-icons/bs";
 // Components
 import Color from "./Color";
 
-//Hooks
+// Hooks
 import { useState } from "react";
+
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+import { colorActions } from "../../redux/slices/colorSlice";
+
+// Fake Data
+const fakeColors = [
+  {
+    id: 1,
+    name: "Black",
+    color: "bg-black",
+  },
+  {
+    id: 2,
+    name: "White",
+    color: "bg-white",
+  },
+  {
+    id: 3,
+    name: "Red",
+    color: "bg-red-500",
+  },
+  {
+    id: 4,
+    name: "Orange",
+    color: "bg-orange-500",
+  },
+  {
+    id: 5,
+    name: "Green",
+    color: "bg-green-500",
+  },
+];
 
 // Styles
 const styles = {
@@ -17,8 +50,16 @@ const styles = {
 const Colors = () => {
   const [showColor, setShowColor] = useState(false);
 
+  const state = useSelector((state) => state.color);
+
+  const dispatch = useDispatch();
+
   const toggleColor = () => {
     setShowColor(!showColor);
+  };
+
+  const setColor = (color) => {
+    dispatch(colorActions.addColor(color));
   };
 
   return (
@@ -34,11 +75,17 @@ const Colors = () => {
       </button>
       {showColor && (
         <ul className={styles.ul}>
-          <Color color="bg-black" title="Black" />
-          <Color color="bg-white" title="White" />
-          <Color color="bg-red-500" title="Red" />
-          <Color color="bg-orange-500" title="Orange" />
-          <Color color="bg-green-500" title="Green" />
+          {fakeColors.map((color) => (
+            <Color
+              key={color.id}
+              click={() => {
+                setColor(color.name);
+              }}
+              color={color.color}
+              title={color.name}
+              selected={state.includes(color.name)}
+            />
+          ))}
         </ul>
       )}
     </div>

@@ -2,7 +2,7 @@ const Product = ({ img, alt, price, category, title }) => {
   return (
     <div className="col-span-4">
       <a href="#">
-        <div className="border border-neutral-200 overflow-hidden rounded-lg">
+        <div className=" mb-4 border border-neutral-200 overflow-hidden rounded-lg">
           <img src={img} alt={alt} />
         </div>
         <div className="flex justify-between">

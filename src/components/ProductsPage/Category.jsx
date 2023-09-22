@@ -1,10 +1,8 @@
 import React from "react";
 
-const Category = ({category}) => {
+const Category = ({ category, click, selected }) => {
   return (
-    <li
-      className={`cursor-pointer  text-black `}
-    >
+    <li onClick={click} className={`cursor-pointer  text-black  ${selected && "font-black"} `}>
       {category}
     </li>
   );

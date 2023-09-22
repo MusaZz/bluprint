@@ -17,9 +17,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="flex justify-between py-10">
-      <a href="#">
+      <Link to="/">
         <img src={Logo} alt="logo" className="w-10 h-12 scale-110" />
-      </a>
+      </Link>
       <nav>
         <ul className="h-full flex gap-20">
           <li className="h-full flex items-center">

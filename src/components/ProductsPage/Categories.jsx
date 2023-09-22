@@ -4,8 +4,32 @@ import { useState } from "react";
 // Components
 import Category from "./Category";
 
-//Icons
+// Icons
 import { BsChevronUp } from "react-icons/bs";
+
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+import { categoryActions } from "../../redux/slices/categorySlice";
+
+//Fake Data
+const fakeCategories = [
+  {
+    id: 1,
+    name: "Caps",
+  },
+  {
+    id: 2,
+    name: "Hoodies",
+  },
+  {
+    id: 3,
+    name: "T-shirts",
+  },
+  {
+    id: 4,
+    name: "Jeans",
+  },
+];
 
 // Styles
 const styles = {
@@ -17,8 +41,16 @@ const styles = {
 const Categories = () => {
   const [showCategories, setShowCategories] = useState(false);
 
+  const state = useSelector((state) => state.category);
+
+  const dispatch = useDispatch();
+
   const toggleCategories = () => {
     setShowCategories(!showCategories);
+  };
+
+  const setCategory = (category) => {
+    dispatch(categoryActions.addCategory(category));
   };
 
   return (
@@ -34,10 +66,16 @@ const Categories = () => {
       </button>
       {showCategories && (
         <ul className={styles.ul}>
-          <Category category="Caps" />
-          <Category category="Hoodies" />
-          <Category category="T-shirts" />
-          <Category category="Jeans" />
+          {fakeCategories.map((category) => (
+            <Category
+              click={() => {
+                setCategory(category.name);
+              }}
+              key={category.id}
+              category={category.name}
+              selected={state.includes(category.name)}
+            />
+          ))}
         </ul>
       )}
     </div>
