@@ -1,7 +1,10 @@
 // Hooks
 import { useState, useEffect } from "react";
 
-const Product = ({ image, alt, price, category, title }) => {
+// React Router
+import { Link } from "react-router-dom";
+
+const Product = ({ image, alt, price, category, title, id }) => {
   const [imageSrc, setImageSrc] = useState(null);
 
   useEffect(() => {
@@ -12,9 +15,10 @@ const Product = ({ image, alt, price, category, title }) => {
         console.error("Error loading image:", error);
       });
   }, [image]);
+  
   return (
     <div className="col-span-4">
-      <a href="#">
+      <Link to={`/product/${id}`}>
         <div className=" mb-4 border border-neutral-200 overflow-hidden rounded-lg">
           <img src={imageSrc} alt={alt} />
         </div>
@@ -27,7 +31,7 @@ const Product = ({ image, alt, price, category, title }) => {
           </div>
           <div className="text-xl font-bold">{price} AZN</div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
