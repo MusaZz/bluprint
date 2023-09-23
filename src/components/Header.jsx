@@ -6,6 +6,7 @@ import Logo from "../assets/Logo.png";
 
 //Components
 import LanguageSwitcher from "./LanguageSwitcher";
+import NavLink from "./NavLink";
 
 //Icons
 import { PiShoppingCartBold } from "react-icons/pi";
@@ -22,28 +23,18 @@ const Header = () => {
       </Link>
       <nav>
         <ul className="h-full flex gap-20">
-          <li className="h-full flex items-center">
-            <Link to="/products">
-              <span className="text-3xl font-black">
-                Products<span className=" text-[#FFC700]">.</span>
-              </span>
-            </Link>
-          </li>
-          <li className="h-full flex items-center">
-            <span className="text-3xl font-black">
-              Collections<span className=" text-[#FFC700]">.</span>
-            </span>
-          </li>
-          <li className="h-full flex items-center">
-            <span className="text-3xl font-black">
-              Account<span className=" text-[#FFC700]">.</span>
-            </span>
-          </li>
-          <li className="h-full flex items-center">
-            <span className="text-3xl font-black">
-              Help<span className=" text-[#FFC700]">.</span>
-            </span>
-          </li>
+          <Link to="/products">
+            <NavLink link="Products" />
+          </Link>
+          <Link>
+            <NavLink link="Collections" />
+          </Link>
+          <Link>
+            <NavLink link="Account" />
+          </Link>
+          <Link>
+            <NavLink link="Help" dropdown />
+          </Link>
         </ul>
       </nav>
       <div className="flex gap-5">

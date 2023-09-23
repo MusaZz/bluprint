@@ -17,7 +17,7 @@ const Register = () => {
           <Title type="register" />
           <div className="w-full">
             <form className="space-y-10">
-              <div className=" flex justify-between w-full">
+              <div className=" flex gap-4 justify-between w-full">
                 <Input label="Firstname" />
                 <Input label="Lastname" />
               </div>

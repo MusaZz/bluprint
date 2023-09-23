@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
       },
+      minWidth: {
+        dropdown: "calc(100% + 5rem)",
+      },
     },
   },
   plugins: [],
