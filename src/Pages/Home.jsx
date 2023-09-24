@@ -10,7 +10,7 @@ import { useEffect } from "react";
 // Components
 import Collections from "../components/HomePage/Collections";
 import TopProducts from "../components/HomePage/TopProducts";
-import Newsletter from "../components/HomePage/Newsletter";
+import Newsletter from "../components/Newsletter";
 
 const Home = () => {
   const user = useSelector((state) => state.user);
@@ -29,7 +29,7 @@ const Home = () => {
       <div className="space-y-40">
         <Collections />
         <TopProducts />
-        <Newsletter />
+        <Newsletter page="HomePage" />
       </div>
     </div>
   );

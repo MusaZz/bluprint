@@ -1,14 +1,18 @@
 // Components
+import Newsletter from "../../components/Newsletter";
 import Categories from "./Categories";
 import Colors from "./Colors";
-import Sizes from "./Sizes"
+import Sizes from "./Sizes";
 
 const Filter = () => {
   return (
-    <div className="col-span-3">
-      <Colors />
-      <Sizes />
-      <Categories />
+    <div className="col-span-3 space-y-10">
+      <div>
+        <Colors />
+        <Sizes />
+        <Categories />
+      </div>
+      <Newsletter page="ProductsPage" />
     </div>
   );
 };

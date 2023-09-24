@@ -39,7 +39,7 @@ const styles = {
 };
 
 const Categories = () => {
-  const [showCategories, setShowCategories] = useState(false);
+  const [showCategories, setShowCategories] = useState(true);
 
   const state = useSelector((state) => state.category);
 

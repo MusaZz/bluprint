@@ -1,6 +1,3 @@
-//Icons
-import { BiWorld } from "react-icons/bi";
-
 //Image
 import Logo from "../assets/Logo.png";
 

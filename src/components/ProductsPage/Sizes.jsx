@@ -49,7 +49,7 @@ const styles = {
 };
 
 const Colors = () => {
-  const [showSize, setShowSize] = useState(false);
+  const [showSize, setShowSize] = useState(true);
 
   const state = useSelector((state) => state.size);
 

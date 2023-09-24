@@ -48,7 +48,7 @@ const styles = {
 };
 
 const Colors = () => {
-  const [showColor, setShowColor] = useState(false);
+  const [showColor, setShowColor] = useState(true);
 
   const state = useSelector((state) => state.color);
 
