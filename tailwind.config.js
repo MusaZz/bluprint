@@ -9,6 +9,9 @@ export default {
       minWidth: {
         dropdown: "calc(100% + 5rem)",
       },
+      scale: {
+        200: "2",
+      },
     },
   },
   plugins: [],

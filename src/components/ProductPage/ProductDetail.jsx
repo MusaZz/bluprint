@@ -1,7 +1,7 @@
 // Image
-import CurvedLine from "../../assets/curved_line.png";
+import YellowLine from "../../assets/yellow_line.png";
 
-const ProductDetail = ({name, category, price}) => {
+const ProductDetail = ({ name, category, price }) => {
   return (
     <div className=" col-span-4">
       <div className=" ">
@@ -13,7 +13,7 @@ const ProductDetail = ({name, category, price}) => {
           <div className="font-black relative max-w-fit text-4xl">
             <span className=" relative z-10">{price} AZN</span>
             <img
-              src={CurvedLine}
+              src={YellowLine}
               alt="line"
               className="absolute left-0 -top-1/4"
             />

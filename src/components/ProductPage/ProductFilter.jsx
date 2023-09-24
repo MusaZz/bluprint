@@ -5,17 +5,31 @@ import { PiShoppingCartBold } from "react-icons/pi";
 import Size from "../ProductsPage/Size";
 
 // Hooks
-import { useState } from "react";
+import { useRef } from "react";
+
+//Redux
+import { useSelector, useDispatch } from "react-redux";
+import { productActions } from "../../redux/slices/productSlice";
 
 const ProductFilter = ({ colorClass, sizes }) => {
-  const [selectedSize, setSelectedSize] = useState(null);
+  const { size, counter } = useSelector((state) => state.product);
+  const inputRef = useRef();
+  const dispatch = useDispatch();
 
   const selectSize = (s) => {
-    if (selectedSize === s) {
-      setSelectedSize(null);
-    } else {
-      setSelectedSize(s);
-    }
+    dispatch(productActions.selectSize(s));
+  };
+
+  const increment = () => {
+    dispatch(productActions.increase());
+  };
+
+  const decrement = () => {
+    dispatch(productActions.decrease());
+  };
+
+  const setCounter = () => {
+    dispatch(productActions.setCounter(inputRef.current.value));
   };
 
   return (
@@ -25,15 +39,15 @@ const ProductFilter = ({ colorClass, sizes }) => {
           <div className="space-y-2.5">
             <h4 className="text-xs font-bold">Choose your Size</h4>
             <ul className="flex gap-2">
-              {sizes.map((size) => (
+              {sizes.map((s) => (
                 <Size
-                  size={size.name}
-                  key={size.name}
-                  disabled={!size.available}
+                  size={s.name}
+                  key={s.name}
+                  disabled={!s.available}
                   click={() => {
-                    selectSize(size.name);
+                    selectSize(s.name);
                   }}
-                  selected={size.name === selectedSize}
+                  selected={s.name === size}
                 />
               ))}
             </ul>
@@ -45,14 +59,21 @@ const ProductFilter = ({ colorClass, sizes }) => {
         </div>
         <div className="space-y-10">
           <div className="flex items-center max-w-fit font-black gap-6">
-            <button className="text-3xl">-</button>
+            <button className="text-3xl" onClick={decrement}>
+              -
+            </button>
             <input
+              ref={inputRef}
+              onChange={setCounter}
+              value={counter}
               type="number"
               min="1"
               max="100"
               className="border max-w-fit h-14 text-2xl text-center rounded-md"
             />
-            <button className="text-3xl">+</button>
+            <button className="text-3xl" onClick={increment}>
+              +
+            </button>
           </div>
           <button className="w-full flex rounded-lg font-black uppercase duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-white justify-between items-center bg-[#1D1D1D] hover:bg-[#0075FF]  text-xl px-8 py-6">
             add to cart

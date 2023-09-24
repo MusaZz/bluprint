@@ -11,6 +11,7 @@ import ProductPage from "./Pages/ProductPage";
 //Components
 import Container from "./components/Container";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
         </Routes>
       </main>
+      {renderHeader && <Footer />}
     </Container>
   );
 };

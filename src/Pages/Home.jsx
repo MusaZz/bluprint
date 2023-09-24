@@ -7,8 +7,10 @@ import { useNavigate } from "react-router-dom";
 //Hooks
 import { useEffect } from "react";
 
-//Components
-import Header from "../components/Header";
+// Components
+import Collections from "../components/HomePage/Collections";
+import TopProducts from "../components/HomePage/TopProducts";
+import Newsletter from "../components/HomePage/Newsletter";
 
 const Home = () => {
   const user = useSelector((state) => state.user);
@@ -23,8 +25,12 @@ const Home = () => {
   console.log(user);
 
   return (
-    <div className="text-6xl text-red-950">
-     Home
+    <div className="my-20">
+      <div className="space-y-40">
+        <Collections />
+        <TopProducts />
+        <Newsletter />
+      </div>
     </div>
   );
 };

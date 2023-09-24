@@ -39,12 +39,9 @@ const Header = () => {
       </nav>
       <div className="flex gap-5">
         <LanguageSwitcher />
-        <a
-          href="#"
-          className="bg-[#1D1D1D] scale-105 w-12 h-12 flex items-center justify-center rounded-md"
-        >
+        <span className="bg-[#1D1D1D] scale-105 w-12 h-12 flex items-center justify-center rounded-md">
           <PiShoppingCartBold className="  fill-white scale-125" />
-        </a>
+        </span>
         <button className="bg-[#1D1D1D] scale-105 w-12 h-12  flex items-center justify-center rounded-md">
           <FiSearch className="stroke-white scale-125 " />
         </button>

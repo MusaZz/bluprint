@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // React Router
 import { Link } from "react-router-dom";
 
-const Product = ({ image, alt, price, category, title, id }) => {
+const Product = ({ image, alt, price, category, title, id, page }) => {
   const [imageSrc, setImageSrc] = useState(null);
 
   useEffect(() => {
@@ -15,9 +15,9 @@ const Product = ({ image, alt, price, category, title, id }) => {
         console.error("Error loading image:", error);
       });
   }, [image]);
-  
+
   return (
-    <div className="col-span-4">
+    <div className={`${page === "home" ? "col-span-3" : "col-span-4"}`}>
       <Link to={`/product/${id}`}>
         <div className=" mb-4 border border-neutral-200 overflow-hidden rounded-lg">
           <img src={imageSrc} alt={alt} />

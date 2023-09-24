@@ -7,9 +7,9 @@ import LanguageSwitcher from "../LanguageSwitcher";
 const Header = () => {
   return (
     <header className=" flex items-center gap-10 py-10">
-      <a href="#">
+      <span>
         <img src={Logo} alt="logo" className="w-10 h-12 scale-110" />
-      </a>
+      </span>
       <LanguageSwitcher />
     </header>
   );

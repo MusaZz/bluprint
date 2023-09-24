@@ -2,7 +2,7 @@
 import Input from "../components/Register/Input";
 import Button from "../components/Register/Button";
 import Header from "../components/Register/Header";
-import Title from "../components/Register/Title";
+import SectionTitle from "../components/SectionTitle";
 import Wallpaper from "../components/Register/Wallpaper";
 
 //React Router
@@ -14,7 +14,7 @@ const Register = () => {
       <Header />
       <main className="my-10">
         <div className=" space-y-20 w-1/3 scale-105">
-          <Title type="register" />
+          <SectionTitle title="Sign Up" />
           <div className="w-full">
             <form className="space-y-10">
               <div className=" flex gap-4 justify-between w-full">
