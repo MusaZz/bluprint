@@ -10,9 +10,13 @@ import { useRef } from "react";
 //Redux
 import { useSelector, useDispatch } from "react-redux";
 import { productActions } from "../../redux/slices/productSlice";
+import { cartActions } from "../../redux/slices/cartSlice";
+
+// React Toast
+import toast from "react-hot-toast";
 
 const ProductFilter = ({ colorClass, sizes }) => {
-  const { size, counter } = useSelector((state) => state.product);
+  const product = useSelector((state) => state.product);
   const inputRef = useRef();
   const dispatch = useDispatch();
 
@@ -32,6 +36,14 @@ const ProductFilter = ({ colorClass, sizes }) => {
     dispatch(productActions.setCounter(inputRef.current.value));
   };
 
+  const addToCart = () => {
+    if (!product.size) {
+      toast.error("Please select a size");
+      return;
+    }
+    dispatch(cartActions.addToCart(product));
+  };
+
   return (
     <div className="col-span-4">
       <div className="flex flex-col justify-between h-full space-y-28">
@@ -47,7 +59,7 @@ const ProductFilter = ({ colorClass, sizes }) => {
                   click={() => {
                     selectSize(s.name);
                   }}
-                  selected={s.name === size}
+                  selected={s.name === product.size}
                 />
               ))}
             </ul>
@@ -65,7 +77,7 @@ const ProductFilter = ({ colorClass, sizes }) => {
             <input
               ref={inputRef}
               onChange={setCounter}
-              value={counter}
+              value={product.counter}
               type="number"
               min="1"
               max="100"
@@ -75,7 +87,10 @@ const ProductFilter = ({ colorClass, sizes }) => {
               +
             </button>
           </div>
-          <button className="w-full flex rounded-lg font-black uppercase duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-white justify-between items-center bg-[#1D1D1D] hover:bg-[#0075FF]  text-xl px-8 py-6">
+          <button
+            onClick={addToCart}
+            className="w-full flex rounded-lg font-black uppercase duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-white justify-between items-center bg-[#1D1D1D] hover:bg-[#0075FF]  text-xl px-8 py-6"
+          >
             add to cart
             <PiShoppingCartBold className="scale-150" />
           </button>

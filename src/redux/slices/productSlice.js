@@ -30,6 +30,14 @@ const productReducer = createSlice({
     setCounter: (state, action) => {
       state.counter = action.payload;
     },
+    setProduct: (state, action) => {
+      const { category, name, price, image } = action.payload;
+
+      state.name = name;
+      state.price = price;
+      state.image = image;
+      state.category = category;
+    },
   },
 });
 

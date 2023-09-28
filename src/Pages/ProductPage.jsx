@@ -6,8 +6,13 @@ import ProductImage from "../components/ProductPage/ProductImage";
 // React Router
 import { useParams } from "react-router-dom";
 
+// Hooks
+import { useEffect } from "react";
+
 //Redux
 import { useSelector } from "react-redux";
+import store from "../redux/store";
+import { productActions } from "../redux/slices/productSlice";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -23,6 +28,21 @@ const ProductPage = () => {
   if (color === "black" || color === "white") {
     colorClass = `bg-${color}`;
   }
+
+  const initialProduct = () => {
+    store.dispatch(
+      productActions.setProduct({
+        category: category,
+        name: name,
+        price: price,
+        image: image,
+      })
+    );
+  };
+
+  useEffect(() => {
+    initialProduct();
+  }, []);
 
   return (
     <div className=" grid grid-cols-12 gap-10">
