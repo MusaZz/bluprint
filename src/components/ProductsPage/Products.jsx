@@ -19,6 +19,7 @@ const Products = () => {
             alt={product.image}
             price={product.price}
             title={product.name}
+            color={product.color}
             category={product.category}
           />
         ))}

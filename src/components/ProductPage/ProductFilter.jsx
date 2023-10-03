@@ -89,7 +89,7 @@ const ProductFilter = ({ colorClass, sizes }) => {
           </div>
           <button
             onClick={addToCart}
-            className="w-full flex rounded-lg font-black uppercase duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-white justify-between items-center bg-[#1D1D1D] hover:bg-[#0075FF]  text-xl px-8 py-6"
+            className="w-full  flex rounded-lg font-black uppercase duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-white justify-between items-center bg-[#1D1D1D] hover:bg-[#0075FF]  text-xl px-8 py-6"
           >
             add to cart
             <PiShoppingCartBold className="scale-150" />

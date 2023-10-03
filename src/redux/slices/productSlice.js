@@ -10,6 +10,7 @@ const productReducer = createSlice({
     image: null,
     color: null,
     size: null,
+    id: null,
   },
   reducers: {
     selectSize: (state, action) => {
@@ -31,12 +32,14 @@ const productReducer = createSlice({
       state.counter = action.payload;
     },
     setProduct: (state, action) => {
-      const { category, name, price, image } = action.payload;
+      const { category, name, price, image, color, id } = action.payload;
 
       state.name = name;
       state.price = price;
       state.image = image;
       state.category = category;
+      state.color = color;
+      state.id = id + state.size;
     },
   },
 });

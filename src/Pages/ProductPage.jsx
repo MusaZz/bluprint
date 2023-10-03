@@ -36,9 +36,16 @@ const ProductPage = () => {
         name: name,
         price: price,
         image: image,
+        color: color,
+        id: id,
       })
     );
   };
+
+  useEffect(() => {
+    store.dispatch(productActions.selectSize(null));
+    store.dispatch(productActions.setCounter(1));
+  }, [id]);
 
   useEffect(() => {
     initialProduct();
