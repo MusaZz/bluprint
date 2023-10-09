@@ -1,4 +1,5 @@
 // Image
+import { Link } from "react-router-dom";
 import Empty from "../assets/empty_box.png";
 
 const EmptyBox = () => {
@@ -14,9 +15,11 @@ const EmptyBox = () => {
           “Add to cart” button on the product page.
         </p>
       </div>
-      <span className="cursor-pointer flex rounded-lg font-black uppercase duration-200 justify-center bg-[#1D1D1D] hover:bg-[#0075FF] text-white px-4 py-3">
-        Browse products
-      </span>
+      <Link to="/products">
+        <span className="cursor-pointer flex rounded-lg font-black uppercase duration-200 justify-center bg-[#1D1D1D] hover:bg-[#0075FF] text-white px-4 py-3">
+          Browse products
+        </span>
+      </Link>
     </div>
   );
 };

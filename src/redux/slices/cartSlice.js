@@ -55,6 +55,13 @@ const cartReducer = createSlice({
       );
       selectedItem.counter = inputValue;
     },
+    removeItem: (state, action) => {
+      const [id, size] = action.payload;
+      const selectedItemIndex = state.findIndex(
+        (item) => item.id === id && item.size === size
+      );
+      state.splice(selectedItemIndex, 1);
+    },
   },
 });
 

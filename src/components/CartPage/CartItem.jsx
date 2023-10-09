@@ -54,8 +54,12 @@ const CartItem = ({
     store.dispatch(cartActions.decrementCounter([id, size]));
   };
 
+  const deleteItem = () => {
+    store.dispatch(cartActions.removeItem([id, size]));
+  };
+
   return (
-    <div className="flex gap-5 w-[717px]">
+    <div className="flex gap-5 min-w-[717px]">
       <div className=" w-full border border-neutral-200 overflow-hidden rounded-lg">
         <img className="w-full h-full" src={imageSrc} alt="product" />
       </div>
@@ -94,10 +98,13 @@ const CartItem = ({
               +
             </button>
           </div>
-          <div className="bg-[#1D1D1D] w-8/12 rounded-lg py-3 px-4 flex items-center justify-between cursor-pointer">
+          <button
+            onClick={deleteItem}
+            className="bg-[#1D1D1D] w-8/12 rounded-lg py-3 px-4 flex items-center justify-between cursor-pointer"
+          >
             <span className="uppercase text-white font-extrabold">remove</span>
             <AiFillMinusCircle className=" fill-white w-6 h-6" />
-          </div>
+          </button>
         </div>
       </div>
     </div>
