@@ -10,7 +10,7 @@ const TopProducts = () => {
   const productsData = useSelector((state) => state.products);
 
   return (
-    <section className="space-y-10 gap-1 flex flex-col">
+    <section className="space-y-10 gap-0.5 flex flex-col">
       <SectionTitle title="Top Products" />
       <div className="grid grid-cols-12 gap-5">
         {productsData.map((product) => (

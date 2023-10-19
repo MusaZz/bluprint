@@ -12,7 +12,7 @@ const Collections = () => {
           <CollectionImage image="1" />
           <div className="flex flex-row gap-10">
             <CollectionImage image="2" />
-            <div className="space-y-10">
+            <div className="space-y-10 flex flex-col gap-0.5">
               <CollectionImage image="3" />
               <Button section="collections" title="See All Collections" />
             </div>
