@@ -8,7 +8,22 @@ import {
   setPassword,
 } from "../../redux/slices/inputSlice";
 
+// Hooks
+import { useState } from "react";
+
 const Input = ({ label }) => {
+  const [inputType, setInputType] = useState("password");
+
+  const toggleInputType = (event) => {
+    event.preventDefault();
+
+    if (inputType === "password") {
+      setInputType("Text");
+    } else {
+      setInputType("password");
+    }
+  };
+
   const { firstName, lastName, password, email } = useSelector(
     (state) => state.input
   );
@@ -65,11 +80,14 @@ const Input = ({ label }) => {
             required={true}
             value={password}
             onChange={(event) => setPasswordValue(event.target.value)}
-            type="password"
+            type={inputType}
             className=" focus:ring-[#FFC700] focus:ring-4 outline-none w-full px-4 py-3 flex- border-2 border-[#1D1D1D] rounded-lg"
           />
-          <button className=" font-bold absolute top-4 right-4 opacity-50 hover:opacity-100 duration-200">
-            Show
+          <button
+            onClick={toggleInputType}
+            className=" font-bold absolute top-4 right-4 opacity-50 hover:opacity-100 duration-200"
+          >
+            {inputType === "password" ? "Show" : "Hide"}
           </button>
         </div>
       )}

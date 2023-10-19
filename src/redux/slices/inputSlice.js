@@ -10,13 +10,13 @@ const inputReducer = createSlice({
   },
   reducers: {
     setFirstName: (state, action) => {
-      state.userName = action.payload;
+      state.firstName = action.payload;
     },
     setPassword: (state, action) => {
       state.password = action.payload;
     },
     setLastName: (state, action) => {
-      state.fullName = action.payload;
+      state.lastName = action.payload;
     },
     setEmail: (state, action) => {
       state.email = action.payload;

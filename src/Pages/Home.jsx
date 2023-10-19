@@ -14,13 +14,12 @@ import Newsletter from "../components/Newsletter";
 
 const Home = () => {
   const user = useSelector((state) => state.user);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
-      navigate("/login");
+    if (user.firstName || user.lastName) {
+      toast.success(`Welcome ${user.firstName} ${user.lastName}`);
     }
-  }, [user, navigate]);
+  }, []);
 
   console.log(user);
 
