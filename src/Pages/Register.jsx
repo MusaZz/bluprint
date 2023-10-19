@@ -8,7 +8,26 @@ import Wallpaper from "../components/Register/Wallpaper";
 //React Router
 import { Link } from "react-router-dom";
 
+// Store
+import store from "../redux/store";
+import { useSelector } from "react-redux";
+
+// Toast
+import toast from "react-hot-toast";
+
 const Register = () => {
+  const { firstName, lastName, email, password } = useSelector(
+    (state) => state.input
+  );
+
+  const signUpHandler = async (event) => {
+    event.preventDefault();
+    if (!firstName || !lastName || email || password) {
+      toast.error("Please fill the inputs");
+      return;
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -23,7 +42,7 @@ const Register = () => {
               </div>
               <Input label="Email" />
               <Input label="Password" />
-              <Button type="register" />
+              <Button click={signUpHandler} type="register" />
               <div className="text-base font-medium">
                 <p>
                   Have an account?
