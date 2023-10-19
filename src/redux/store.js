@@ -8,6 +8,7 @@ import sizeSlice from "./slices/sizeSlice";
 import productsSlice from "./slices/productsSlice";
 import productSlice from "./slices/productSlice";
 import cartSlice from "./slices/cartSlice";
+import inputSlice from "./slices/inputSlice";
 
 const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ const store = configureStore({
     products: productsSlice,
     product: productSlice,
     cart: cartSlice,
+    input: inputSlice
   },
 });
 

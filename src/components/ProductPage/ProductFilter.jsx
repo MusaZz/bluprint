@@ -40,8 +40,11 @@ const ProductFilter = ({ colorClass, sizes }) => {
     if (!product.size) {
       toast.error("Please select a size");
       return;
+    } else {
+      dispatch(cartActions.addToCart(product));
+      toast.success("Product successfully added.")
     }
-    dispatch(cartActions.addToCart(product));
+
   };
 
   return (

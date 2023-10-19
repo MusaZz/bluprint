@@ -4,12 +4,15 @@ import Logo from "../../assets/Logo.png";
 //Components
 import LanguageSwitcher from "../LanguageSwitcher";
 
+// Router
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className=" flex items-center gap-10 py-10">
-      <span>
+      <Link to="/">
         <img src={Logo} alt="logo" className="w-10 h-12 scale-110" />
-      </span>
+      </Link>
       <LanguageSwitcher />
     </header>
   );
