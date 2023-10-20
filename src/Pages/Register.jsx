@@ -55,8 +55,8 @@ const Register = () => {
       console.log(data);
       store.dispatch(
         setUser({
-          userName: data.user.user_metadata.userName,
-          fullName: data.user.user_metadata.fullName,
+          firstName: data.user.user_metadata.firstName,
+          lastName: data.user.user_metadata.lastName,
           email: data.user.email,
         })
       );

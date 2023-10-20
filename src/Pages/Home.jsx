@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import Collections from "../components/HomePage/Collections";
 import TopProducts from "../components/HomePage/TopProducts";
 import Newsletter from "../components/Newsletter";
+import toast from "react-hot-toast";
 
 const Home = () => {
   const user = useSelector((state) => state.user);
@@ -18,6 +19,8 @@ const Home = () => {
   useEffect(() => {
     if (user.firstName || user.lastName) {
       toast.success(`Welcome ${user.firstName} ${user.lastName}`);
+    } else {
+      toast.error("There is no any account");
     }
   }, []);
 

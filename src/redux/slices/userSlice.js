@@ -9,8 +9,8 @@ const userReducer = createSlice({
   },
   reducers: {
     setUser: (state, action) => {
-      state.firstName = action.payload.userName;
-      state.lastName = action.payload.fullName;
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
       state.email = action.payload.email;
     },
   },
