@@ -10,7 +10,13 @@ import YellowLine from "../assets/yellow_line.png";
 // Redux
 import { useSelector } from "react-redux";
 
+// Hooks
+import { useState } from "react";
+import DeleteModal from "../components/CartPage/DeleteModal";
+
 const CartPage = () => {
+  const [wantDelete, setWantDelete] = useState(false);
+
   const cartData = useSelector((state) => state.cart);
 
   const subtotal = cartData.reduce(
@@ -23,7 +29,11 @@ const CartPage = () => {
       <div className="space-y-10">
         <SectionTitle title="Cart" />
         <div className="border-y border-neutral-100 py-10">
-          {cartData.length ? <CartItems cartData={cartData} /> : <EmptyBox />}
+          {cartData.length ? (
+            <CartItems setWantDelete={setWantDelete} cartData={cartData} />
+          ) : (
+            <EmptyBox />
+          )}
         </div>
         {cartData.length ? (
           <div className="flex justify-between space-y-0 items-center pb-10">
@@ -42,6 +52,8 @@ const CartPage = () => {
           </div>
         ) : null}
       </div>
+
+      {wantDelete && <DeleteModal setWantDelete={setWantDelete} />}
     </div>
   );
 };

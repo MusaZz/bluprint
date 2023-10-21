@@ -8,6 +8,9 @@ import { useState, useEffect, useRef } from "react";
 import { cartActions } from "../../redux/slices/cartSlice";
 import store from "../../redux/store";
 
+// Hot toast
+import toast from "react-hot-toast";
+
 const CartItem = ({
   name,
   category,
@@ -17,6 +20,7 @@ const CartItem = ({
   color,
   counter,
   id,
+  setWantDelete,
 }) => {
   let colorClass = `bg-${color}-500`;
 
@@ -54,8 +58,13 @@ const CartItem = ({
     store.dispatch(cartActions.decrementCounter([id, size]));
   };
 
+  // const deleteItem = () => {
+  //   store.dispatch(cartActions.removeItem([id, size]));
+  //   toast.success(`Item successfully deleted.`);
+  // };
+
   const deleteItem = () => {
-    store.dispatch(cartActions.removeItem([id, size]));
+    setWantDelete(true);
   };
 
   return (
