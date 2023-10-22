@@ -1,5 +1,5 @@
 // Components
-import Newsletter from "../../components/Newsletter";
+import Newsletter from "../Common/Newsletter";
 import Categories from "./Categories";
 import Colors from "./Colors";
 import Sizes from "./Sizes";

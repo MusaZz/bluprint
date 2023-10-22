@@ -30,8 +30,8 @@ const fakeColors = [
   },
   {
     id: 4,
-    name: "Orange",
-    color: "bg-orange-500",
+    name: "Blue",
+    color: "bg-blue-500",
   },
   {
     id: 5,

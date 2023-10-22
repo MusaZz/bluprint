@@ -2,7 +2,7 @@
 import Logo from "../../assets/Logo.png";
 
 //Components
-import LanguageSwitcher from "../LanguageSwitcher";
+import LanguageSwitcher from "../Common/LanguageSwitcher";
 
 // Router
 import { Link } from "react-router-dom";

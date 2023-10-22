@@ -7,9 +7,42 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 const Products = () => {
   const productsData = useSelector((state) => state.products);
 
+  // console.log(productsData);
+  const color = useSelector((state) => state.color);
+  console.log(color);
+
+  const size = useSelector((state) => state.size);
+  const category = useSelector((state) => state.category);
+
+  // const sizeMapping = {
+  //   "Extra Small": "xs",
+  //   Small: "s",
+  //   Medium: "m",
+  //   Large: "l",
+  //   "Extra Large": "xl",
+  // };
+
+  // const newSizes = [...(size.map((s) => sizeMapping[s]) || null)];
+
+  const filters = [];
+
+  filters.push(...color, ...size, ...category);
+
   return (
-    <div className=" col-span-9 h-full">
-      {/* <h3 className='w-full h-fit font-medium'>Showing 2 results</h3> */}
+    <div className=" col-span-9 h-full space-y-5">
+      <div className="flex items-center gap-6 w-full h-fit">
+        <h3 className="font-medium min-w-fit">Showind 2 results</h3>
+        <ul className="flex items-center gap-2 flex-wrap">
+          {filters.map((filter) => (
+            <li key={filter}>
+              <button className="flex gap-1 bg-[#1d1d1d] px-3 py-1 rounded-md text-sm text-white">
+                <span className="">{filter}</span>
+                <span className="text-white">x</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="grid grid-cols-12 gap-10">
         {productsData.map((product) => (
           <Product

@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Image
-import CapsHoverImage from "../assets/caps_hover_image.png";
+import CapsHoverImage from "../../assets/caps_hover_image.png";
 
 const NavLink = ({ link, dropdown }) => {
   return (
@@ -36,7 +36,7 @@ const NavLink = ({ link, dropdown }) => {
         </div>
       )}
       {link === "Products" && (
-        <div className=" min-w-dropdown bg-white z-10 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 duration-200 absolute top-full -left-10 rounded-xl border border-gray-100 p-5 shadow">
+        <div className=" min-w-dropdown bg-white z-50 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 duration-200 absolute top-full -left-10 rounded-xl border border-gray-100 p-5 shadow">
           <div className="flex gap-5">
             <ul className="space-y-5 w-1/3">
               <li className="text-xl font-bold">

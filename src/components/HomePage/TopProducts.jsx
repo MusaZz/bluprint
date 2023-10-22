@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 // Components
 import Product from "../../components/ProductsPage/Product";
 import Button from "./Button";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../Common/SectionTitle";
 
 const TopProducts = () => {
   const productsData = useSelector((state) => state.products);

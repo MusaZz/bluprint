@@ -1,7 +1,7 @@
 // Components
-import SectionTitle from "../components/SectionTitle";
+import SectionTitle from "../components/Common/SectionTitle";
 import CartItems from "../components/CartPage/CartItems";
-import EmptyBox from "../components/EmptyBox";
+import EmptyBox from "../components/Common/EmptyBox";
 import Button from "../components/HomePage/Button";
 
 // Image

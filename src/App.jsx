@@ -13,9 +13,9 @@ import CartPage from "./Pages/CartPage";
 import { Toaster } from "react-hot-toast";
 
 //Components
-import Container from "./components/Container";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Container from "./components/Common/Container";
+import Header from "./components/Common/Header";
+import Footer from "./components/Common/Footer";
 
 const App = () => {
   const location = useLocation();
@@ -26,20 +26,20 @@ const App = () => {
   return (
     <>
       <Toaster position="top-right" />
-        <Container>
-          {renderHeader && <Header />}
-          <main className={`${renderHeader && "my-20"}`}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<ProductsPage />} />
-              <Route path="/product/:id" element={<ProductPage />} />
-              <Route path="/cart" element={<CartPage />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-            </Routes>
-          </main>
-          {renderHeader && <Footer />}
-        </Container>
+      <Container>
+        {renderHeader && <Header />}
+        <main className={`${renderHeader && "my-20"}`}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </main>
+        {renderHeader && <Footer />}
+      </Container>
     </>
   );
 };

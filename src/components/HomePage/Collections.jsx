@@ -1,5 +1,5 @@
 // Components
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../Common/SectionTitle";
 import Button from "./Button";
 import CollectionImage from "./CollectionImage";
 

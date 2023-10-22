@@ -7,7 +7,7 @@ const productsReducer = createSlice({
       id: 1,
       price: 13.99,
       name: "Varsity Cap",
-      category: "Unisex Caps",
+      category: "Caps",
       image: "cap",
       color: "green",
       sizes: [

@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 // Toast
 import toast from "react-hot-toast";
 
-const DeleteModal = ({ setWantDelete }) => {
+const DeleteModal = ({ setWantDelete}) => {
   const { id, size } = useSelector((state) => state.cart);
 
   const dontWantDelete = (event) => {
@@ -41,7 +41,7 @@ const DeleteModal = ({ setWantDelete }) => {
             </button>
             <button
               onClick={wantDelete}
-              className="w-auto px-4 py-2 font-medium rounded-md duration-200 bg-[#da4848e6] hover:opacity-100 text-white hover:bg-neutral-200 order-1"
+              className="w-auto px-4 py-2 font-medium rounded-md duration-200 bg-[#da4848e6] hover:bg-[#d54947] text-white  order-1"
             >
               Yes, remove it
             </button>

@@ -3,7 +3,7 @@ import Input from "../components/Register/Input";
 import Button from "../components/Register/Button";
 import Header from "../components/Register/Header";
 import Wallpaper from "../components/Register/Wallpaper";
-import SectionTitle from "../components/SectionTitle";
+import SectionTitle from "../components/Common/SectionTitle";
 
 //React Router
 import { Link } from "react-router-dom";
