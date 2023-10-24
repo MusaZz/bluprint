@@ -7,6 +7,7 @@ const inputReducer = createSlice({
     lastName: "",
     email: "",
     password: "",
+    search: "",
   },
   reducers: {
     setFirstName: (state, action) => {
@@ -21,10 +22,13 @@ const inputReducer = createSlice({
     setEmail: (state, action) => {
       state.email = action.payload;
     },
+    setSearch: (state, action) => {
+      state.search = action.payload;
+    },
   },
 });
 
-export const { setFirstName, setLastName, setEmail, setPassword } =
+export const { setFirstName, setLastName, setEmail, setPassword, setSearch } =
   inputReducer.actions;
 
 export default inputReducer.reducer;

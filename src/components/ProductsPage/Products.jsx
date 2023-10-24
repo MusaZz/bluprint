@@ -13,8 +13,6 @@ const Products = () => {
   const size = useSelector((state) => state.size);
   const category = useSelector((state) => state.category);
 
-  console.log(category);
-
   // const sizeMapping = {
   //   "Extra Small": "xs",
   //   Small: "s",

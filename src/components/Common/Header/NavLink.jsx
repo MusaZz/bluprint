@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Image
-import CapsHoverImage from "../../assets/caps_hover_image.png";
+import CapsHoverImage from "../../../assets/caps_hover_image.png";
 
 const NavLink = ({ link, dropdown }) => {
   return (

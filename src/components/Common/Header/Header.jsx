@@ -1,8 +1,8 @@
 //Image
-import Logo from "../../assets/Logo.png";
+import Logo from "../../../assets/Logo.png";
 
 //Components
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "../LanguageSwitcher";
 import NavLink from "./NavLink";
 
 //Icons
@@ -14,25 +14,22 @@ import { Link } from "react-router-dom";
 
 // Redux
 import { useSelector } from "react-redux";
+import { setSearch } from "../../../redux/slices/inputSlice";
+import store from "../../../redux/store";
 
 // Hook
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import SeachInput from "./SeachInput";
 
 const Header = () => {
-  const cart = useSelector((state) => state.cart);
+  const [isSearch, setIsSearch] = useState(false);
 
-  const [isSaerch, setIsSearch] = useState(false);
+  const cart = useSelector((state) => state.cart);
 
   const openSeachHandler = (event) => {
     event.preventDefault();
 
     setIsSearch(true);
-  };
-
-  const closeSearchHandler = (event) => {
-    if (event.code === "Escape") {
-      setIsSearch(false);
-    }
   };
 
   return (
@@ -82,24 +79,7 @@ const Header = () => {
           <FiSearch className="stroke-white scale-125 " />
         </button>
       </div>
-      {isSaerch && (
-        <div
-          onKeyDown={closeSearchHandler}
-          className="flex justify-center fixed inset-0 backdrop-blur-xl z-10 bg-[#1d1d1d4d]"
-        >
-          <div className="px-0 mt-20 h-fit w-1/3">
-            <div className="bg-white rounded-lg overflow-hidden">
-              <form action="#">
-                <input
-                  className="w-full outline-none border-none p-4 text-xl rounded-lg"
-                  placeholder="Search..."
-                  type="text"
-                />
-              </form>
-            </div>
-          </div>
-        </div>
-      )}
+      {isSearch && <SeachInput isSearch={isSearch} setIsSearch={setIsSearch} />}
     </div>
   );
 };

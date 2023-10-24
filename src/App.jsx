@@ -14,7 +14,7 @@ import { Toaster } from "react-hot-toast";
 
 //Components
 import Container from "./components/Common/Container";
-import Header from "./components/Common/Header";
+import Header from "./components/Common/Header/Header";
 import Footer from "./components/Common/Footer";
 
 const App = () => {
