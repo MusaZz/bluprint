@@ -12,13 +12,31 @@ import { FiSearch } from "react-icons/fi";
 //React Router
 import { Link } from "react-router-dom";
 
+// Redux
 import { useSelector } from "react-redux";
+
+// Hook
+import { useState } from "react";
 
 const Header = () => {
   const cart = useSelector((state) => state.cart);
 
+  const [isSaerch, setIsSearch] = useState(false);
+
+  const openSeachHandler = (event) => {
+    event.preventDefault();
+
+    setIsSearch(true);
+  };
+
+  const closeSearchHandler = (event) => {
+    if (event.code === "Escape") {
+      setIsSearch(false);
+    }
+  };
+
   return (
-    <div className="flex justify-between py-10">
+    <div className="flex justify-between py-10 relative">
       <Link to="/">
         <img src={Logo} alt="logo" className="w-10 h-12 scale-110" />
       </Link>
@@ -57,10 +75,31 @@ const Header = () => {
             )}
           </span>
         </Link>
-        <button className="bg-[#1D1D1D] scale-105 w-12 h-12  flex items-center justify-center rounded-md">
+        <button
+          onClick={openSeachHandler}
+          className="bg-[#1D1D1D] relative scale-105 w-12 h-12  flex items-center justify-center rounded-md"
+        >
           <FiSearch className="stroke-white scale-125 " />
         </button>
       </div>
+      {isSaerch && (
+        <div
+          onKeyDown={closeSearchHandler}
+          className="flex justify-center fixed inset-0 backdrop-blur-xl z-10 bg-[#1d1d1d4d]"
+        >
+          <div className="px-0 mt-20 h-fit w-1/3">
+            <div className="bg-white rounded-lg overflow-hidden">
+              <form action="#">
+                <input
+                  className="w-full outline-none border-none p-4 text-xl rounded-lg"
+                  placeholder="Search..."
+                  type="text"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

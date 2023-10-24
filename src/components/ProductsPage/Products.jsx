@@ -9,10 +9,11 @@ const Products = () => {
 
   // console.log(productsData);
   const color = useSelector((state) => state.color);
-  console.log(color);
 
   const size = useSelector((state) => state.size);
   const category = useSelector((state) => state.category);
+
+  console.log(category);
 
   // const sizeMapping = {
   //   "Extra Small": "xs",
@@ -27,7 +28,7 @@ const Products = () => {
   const filters = [];
 
   filters.push(...color, ...size, ...category);
-
+  
   return (
     <div className=" col-span-9 h-full space-y-5">
       <div className="flex items-center gap-6 w-full h-fit">
