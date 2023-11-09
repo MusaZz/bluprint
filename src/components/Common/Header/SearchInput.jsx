@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { setSearch } from "../../../redux/slices/inputSlice";
 import store from "../../../redux/store";
 
-const SeachInput = ({ isSearch, setIsSearch }) => {
+const SearchInput = ({ isSearch, setIsSearch }) => {
   const { search } = useSelector((state) => state.input);
 
   const searchInputRef = useRef();
@@ -60,24 +60,26 @@ const SeachInput = ({ isSearch, setIsSearch }) => {
               type="text"
             />
           </form>
-          <div className="flex flex-col gap-2 text-center py-4">
-            <div className="text-[#1d1d1d]">
-              <h6 className="text-lg font-bold">Nothing found</h6>
-              <p className="text-[#404040] font-medium">
-                Try to search for something else
-              </p>
+          {search.length > 0 && (
+            <div className="flex flex-col gap-2 text-center py-4">
+              <div className="text-[#1d1d1d]">
+                <h6 className="text-lg font-bold">Nothing found</h6>
+                <p className="text-[#404040] font-medium">
+                  Try to search for something else
+                </p>
+              </div>
+              <button
+                onClick={emptySearchValue}
+                className="font-medium opacity-75"
+              >
+                Clear search
+              </button>
             </div>
-            <button
-              onClick={emptySearchValue}
-              className="font-medium opacity-75"
-            >
-              Clear search
-            </button>
-          </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default SeachInput;
+export default SearchInput;

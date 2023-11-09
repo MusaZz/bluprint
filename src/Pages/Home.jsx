@@ -21,8 +21,6 @@ const Home = () => {
     }
   }, []);
 
-  console.log(user);
-
   return (
     <div className="my-20">
       <div className="space-y-40">

@@ -19,7 +19,7 @@ import store from "../../../redux/store";
 
 // Hook
 import { useState, useRef, useEffect } from "react";
-import SeachInput from "./SeachInput";
+import SearchInput from "./SearchInput";
 
 const Header = () => {
   const [isSearch, setIsSearch] = useState(false);
@@ -79,7 +79,7 @@ const Header = () => {
           <FiSearch className="stroke-white scale-125 " />
         </button>
       </div>
-      {isSearch && <SeachInput isSearch={isSearch} setIsSearch={setIsSearch} />}
+      {isSearch && <SearchInput isSearch={isSearch} setIsSearch={setIsSearch} />}
     </div>
   );
 };
