@@ -1,7 +1,7 @@
 // Components
-import ProductDetail from "../components/ProductPage/ProductDetail";
-import ProductFilter from "../components/ProductPage/ProductFilter";
-import ProductImage from "../components/ProductPage/ProductImage";
+import ProductDetail from "../../components/ProductPage/ProductDetail";
+import ProductFilter from "../../components/ProductPage/ProductFilter";
+import ProductImage from "../../components/ProductPage/ProductImage";
 
 // React Router
 import { useParams } from "react-router-dom";
@@ -11,10 +11,10 @@ import { useEffect } from "react";
 
 //Redux
 import { useSelector } from "react-redux";
-import store from "../redux/store";
-import { productActions } from "../redux/slices/productSlice";
+import store from "../../redux/store";
+import { productActions } from "../../redux/slices/productSlice";
 
-const ProductPage = () => {
+const Product = () => {
   const { id } = useParams();
 
   const productsData = useSelector((state) => state.products);
@@ -60,4 +60,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default Product;

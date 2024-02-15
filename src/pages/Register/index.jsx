@@ -1,40 +1,48 @@
 //Components
-import Input from "../components/Register/Input";
-import Button from "../components/Register/Button";
-import Header from "../components/Register/Header";
-import Wallpaper from "../components/Register/Wallpaper";
-import SectionTitle from "../components/Common/SectionTitle";
+import Input from "../../components/Register/Input";
+import Button from "../../components/Register/Button";
+import Header from "../../components/Register/Header";
+import SectionTitle from "../../components/Common/SectionTitle";
+import Wallpaper from "../../components/Register/Wallpaper";
 
 //React Router
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 // Store
-import store from "../redux/store";
+import store from "../../redux/store";
 import { useSelector } from "react-redux";
-import { setUser } from "../redux/slices/userSlice";
+import { setUser } from "../../redux/slices/userSlice";
 
 // Toast
 import toast from "react-hot-toast";
 
 // Supabase
-import supabase from "../supabase";
+import supabase from "../../supabase";
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
 
-  const { email, password } = useSelector((state) => state.input);
+  const { firstName, lastName, email, password } = useSelector(
+    (state) => state.input
+  );
 
-  const signInHandler = async (event) => {
+  const signUpHandler = async (event) => {
     event.preventDefault();
-    if (!email || !password) {
+    if (!firstName || !lastName || !email || !password) {
       toast.error("Please fill the inputs");
       return;
     }
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signUp({
       email: email,
       password: password,
+      options: {
+        data: {
+          firstName: firstName,
+          lastName: lastName,
+        },
+      },
     });
 
     if (error) {
@@ -61,32 +69,31 @@ const Login = () => {
       <Header />
       <main className="my-10">
         <div className=" space-y-20 w-1/3 scale-105">
-          <SectionTitle title="Sign In" />
+          <SectionTitle title="Sign Up" />
           <div className="w-full">
             <form className="space-y-10">
+              <div className=" flex gap-4 justify-between w-full">
+                <Input label="Firstname" />
+                <Input label="Lastname" />
+              </div>
               <Input label="Email" />
               <Input label="Password" />
-              <Button click={signInHandler} type="login" />
-              <div className=" underline space-y-10 font-medium">
-                <span>Forgot my password</span>
-              </div>
+              <Button click={signUpHandler} type="register" />
               <div className="text-base font-medium">
                 <p>
-                  global.new-here
-                  <Link to="/register">
-                    <span className="underline">
-                      Create an accout to get started
-                    </span>
+                  Have an account?
+                  <Link to="/login">
+                    <span className="underline">Sign in here.</span>
                   </Link>
                 </p>
               </div>
             </form>
           </div>
         </div>
-        <Wallpaper type="login" />
+        <Wallpaper type="register" />
       </main>
     </div>
   );
 };
 
-export default Login;
+export default Register;

@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 // Components
-import Collections from "../components/HomePage/Collections";
-import TopProducts from "../components/HomePage/TopProducts";
-import Newsletter from "../components/Common/Newsletter";
+import Collections from "../../components/HomePage/Collections";
+import TopProducts from "../../components/HomePage/TopProducts";
+import Newsletter from "../../components/Common/Newsletter";
 import toast from "react-hot-toast";
 
 const Home = () => {

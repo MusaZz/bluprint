@@ -1,20 +1,20 @@
 // Components
-import SectionTitle from "../components/Common/SectionTitle";
-import CartItems from "../components/CartPage/CartItems";
-import EmptyBox from "../components/Common/EmptyBox";
-import Button from "../components/HomePage/Button";
+import SectionTitle from "../../components/Common/SectionTitle";
+import CartItems from "../../components/CartPage/CartItems";
+import EmptyBox from "../../components/Common/EmptyBox";
+import Button from "../../components/HomePage/Button";
 
 // Image
-import YellowLine from "../assets/yellow_line.png";
+import YellowLine from "../../assets/yellow_line.png";
 
 // Redux
 import { useSelector } from "react-redux";
 
 // Hooks
 import { useState } from "react";
-import DeleteModal from "../components/CartPage/DeleteModal";
+import DeleteModal from "../../components/CartPage/DeleteModal";
 
-const CartPage = () => {
+const Cart = () => {
   const [wantDelete, setWantDelete] = useState(false);
 
   const cartData = useSelector((state) => state.cart);
@@ -58,4 +58,4 @@ const CartPage = () => {
   );
 };
 
-export default CartPage;
+export default Cart;
