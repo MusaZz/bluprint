@@ -1,7 +1,7 @@
 // Image
-import YellowLine from "../../assets/yellow_line.png";
+import YellowLine from "../../../assets/yellow_line.png";
 
-const ProductDetail = ({ name, category, price }) => {
+const Detail = ({ name, category, price }) => {
   return (
     <div className=" col-span-4">
       <div className=" ">
@@ -24,4 +24,4 @@ const ProductDetail = ({ name, category, price }) => {
   );
 };
 
-export default ProductDetail;
+export default Detail;

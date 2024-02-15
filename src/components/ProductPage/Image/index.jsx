@@ -1,15 +1,15 @@
 // Images
-import Example from "../../assets/example.png";
+import Example from "../../../assets/example.png";
 
 // Hooks
 import { useState, useEffect } from "react";
 
-const ProductImage = ({ image }) => {
+const Image = ({ image }) => {
   const [imageSrc, setImageSrc] = useState(null);
 
   useEffect(() => {
     // Use dynamic import to load the image
-    import(`../../assets/${image}.png`)
+    import(`../../../assets/${image}.png`)
       .then((module) => setImageSrc(module.default))
       .catch((error) => {
         console.error("Error loading image:", error);
@@ -53,4 +53,4 @@ const ProductImage = ({ image }) => {
   );
 };
 
-export default ProductImage;
+export default Image;

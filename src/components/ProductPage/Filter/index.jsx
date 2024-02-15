@@ -2,20 +2,20 @@
 import { PiShoppingCartBold } from "react-icons/pi";
 
 // Component
-import Size from "../ShopPage/Filter/Sizes/Size";;
+import Size from "../../ShopPage/Filter/Sizes/Size";
 
 // Hooks
 import { useRef } from "react";
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
-import { productActions } from "../../redux/slices/product";
-import { cartActions } from "../../redux/slices/cart";
+import { productActions } from "../../../redux/slices/product";
+import { cartActions } from "../../../redux/slices/cart";
 
 // React Toast
 import toast from "react-hot-toast";
 
-const ProductFilter = ({ colorClass, sizes }) => {
+const Filter = ({ colorClass, sizes }) => {
   const product = useSelector((state) => state.product);
   const inputRef = useRef();
   const dispatch = useDispatch();
@@ -42,9 +42,8 @@ const ProductFilter = ({ colorClass, sizes }) => {
       return;
     } else {
       dispatch(cartActions.addToCart(product));
-      toast.success("Product successfully added.")
+      toast.success("Product successfully added.");
     }
-
   };
 
   return (
@@ -103,4 +102,4 @@ const ProductFilter = ({ colorClass, sizes }) => {
   );
 };
 
-export default ProductFilter;
+export default Filter;

@@ -9,7 +9,7 @@ const Product = ({ image, alt, price, category, title, id, page }) => {
 
   useEffect(() => {
     // Use dynamic import to load the image
-    import(`../../assets/${image}.png`)
+    import(`../../../../assets/${image}.png`)
       .then((module) => setImageSrc(module.default))
       .catch((error) => {
         console.error("Error loading image:", error);

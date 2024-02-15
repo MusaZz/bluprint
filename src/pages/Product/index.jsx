@@ -1,63 +1,8 @@
-// Components
-import ProductDetail from "../../components/ProductPage/ProductDetail";
-import ProductFilter from "../../components/ProductPage/ProductFilter";
-import ProductImage from "../../components/ProductPage/ProductImage";
-
-// React Router
-import { useParams } from "react-router-dom";
-
-// Hooks
-import { useEffect } from "react";
-
-//Redux
-import { useSelector } from "react-redux";
-import store from "../../redux/store";
-import { productActions } from "../../redux/slices/product";
+// Component
+import ProductPage from "../../components/ProductPage";
 
 const Product = () => {
-  const { id } = useParams();
-
-  const productsData = useSelector((state) => state.products);
-
-  const { name, category, price, image, color, sizes } = productsData.find(
-    (p) => p.id === +id
-  );
-
-  let colorClass = `bg-${color}-500`;
-
-  if (color === "black" || color === "white") {
-    colorClass = `bg-${color}`;
-  }
-
-  const initialProduct = () => {
-    store.dispatch(
-      productActions.setProduct({
-        category: category,
-        name: name,
-        price: price,
-        image: image,
-        color: color,
-        id: id,
-      })
-    );
-  };
-
-  useEffect(() => {
-    store.dispatch(productActions.selectSize(null));
-    store.dispatch(productActions.setCounter(1));
-  }, [id]);
-
-  useEffect(() => {
-    initialProduct();
-  }, []);
-
-  return (
-    <div className=" grid grid-cols-12 gap-10">
-      <ProductDetail name={name} category={category} price={price} />
-      <ProductImage image={image} />
-      <ProductFilter colorClass={colorClass} sizes={sizes} />
-    </div>
-  );
+  return <ProductPage />;
 };
 
 export default Product;
