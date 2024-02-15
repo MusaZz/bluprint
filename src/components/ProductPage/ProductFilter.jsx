@@ -9,8 +9,8 @@ import { useRef } from "react";
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
-import { productActions } from "../../redux/slices/productSlice";
-import { cartActions } from "../../redux/slices/cartSlice";
+import { productActions } from "../../redux/slices/product";
+import { cartActions } from "../../redux/slices/cart";
 
 // React Toast
 import toast from "react-hot-toast";

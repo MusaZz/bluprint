@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const sizeReducer = createSlice({
+const size = createSlice({
   name: "size",
   initialState: [],
   reducers: {
@@ -17,6 +17,6 @@ const sizeReducer = createSlice({
   },
 });
 
-export const sizeActions = sizeReducer.actions;
+export const sizeActions = size.actions;
 
-export default sizeReducer.reducer;
+export default size.reducer;

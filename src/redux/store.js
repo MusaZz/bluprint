@@ -1,25 +1,25 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 //Slices
-import userSlice from "./slices/userSlice";
-import categorySlice from "./slices/categorySlice";
-import colorSlice from "./slices/colorSlice";
-import sizeSlice from "./slices/sizeSlice";
-import productsSlice from "./slices/productsSlice";
-import productSlice from "./slices/productSlice";
-import cartSlice from "./slices/cartSlice";
-import inputSlice from "./slices/inputSlice";
+import user from "./slices/user";
+import category from "./slices/category";
+import color from "./slices/color";
+import size from "./slices/size";
+import products from "./slices/products";
+import product from "./slices/product";
+import cart from "./slices/cart";
+import input from "./slices/input";
 
 const store = configureStore({
   reducer: {
-    user: userSlice,
-    category: categorySlice,
-    color: colorSlice,
-    size: sizeSlice,
-    products: productsSlice,
-    product: productSlice,
-    cart: cartSlice,
-    input: inputSlice
+    user,
+    category,
+    color,
+    size,
+    products,
+    product,
+    cart,
+    input,
   },
 });
 

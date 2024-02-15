@@ -9,7 +9,7 @@ import {
   setFirstName,
   setLastName,
   setPassword,
-} from "../../redux/slices/inputSlice";
+} from "../../redux/slices/input";
 
 // Hooks
 import { useState, useEffect } from "react";

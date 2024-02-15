@@ -5,7 +5,7 @@ import { AiFillMinusCircle } from "react-icons/ai";
 import { useState, useEffect, useRef } from "react";
 
 // Redux
-import { cartActions } from "../../redux/slices/cartSlice";
+import { cartActions } from "../../redux/slices/cart";
 import store from "../../redux/store";
 
 // Hot toast

@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 
 // Redux
 import { useSelector } from "react-redux";
-import { setSearch } from "../../../redux/slices/inputSlice";
+import { setSearch } from "../../../redux/slices/input";
 import store from "../../../redux/store";
 
 const SearchInput = ({ isSearch, setIsSearch }) => {

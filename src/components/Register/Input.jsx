@@ -6,7 +6,7 @@ import {
   setLastName,
   setEmail,
   setPassword,
-} from "../../redux/slices/inputSlice";
+} from "../../redux/slices/input";
 
 // Hooks
 import { useState } from "react";

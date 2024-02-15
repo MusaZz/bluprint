@@ -1,6 +1,6 @@
 // Store
 import store from "../../redux/store";
-import { cartActions } from "../../redux/slices/cartSlice";
+import { cartActions } from "../../redux/slices/cart";
 
 // Redux
 import { useSelector } from "react-redux";

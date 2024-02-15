@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const colorReducer = createSlice({
+const color = createSlice({
   name: "color",
   initialState: [],
   reducers: {
@@ -17,6 +17,6 @@ const colorReducer = createSlice({
   },
 });
 
-export const colorActions = colorReducer.actions;
+export const colorActions = color.actions;
 
-export default colorReducer.reducer;
+export default color.reducer;

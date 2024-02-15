@@ -12,7 +12,7 @@ import { useEffect } from "react";
 //Redux
 import { useSelector } from "react-redux";
 import store from "../../redux/store";
-import { productActions } from "../../redux/slices/productSlice";
+import { productActions } from "../../redux/slices/product";
 
 const Product = () => {
   const { id } = useParams();

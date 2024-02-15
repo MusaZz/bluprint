@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 // Store
 import store from "../../redux/store";
 import { useSelector } from "react-redux";
-import { setUser } from "../../redux/slices/userSlice";
+import { setUser } from "../../redux/slices/user";
 
 // Toast
 import toast from "react-hot-toast";

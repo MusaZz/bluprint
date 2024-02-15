@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const inputReducer = createSlice({
+const input = createSlice({
   name: "input",
   initialState: {
     firstName: "",
@@ -29,6 +29,6 @@ const inputReducer = createSlice({
 });
 
 export const { setFirstName, setLastName, setEmail, setPassword, setSearch } =
-  inputReducer.actions;
+  input.actions;
 
-export default inputReducer.reducer;
+export default input.reducer;
