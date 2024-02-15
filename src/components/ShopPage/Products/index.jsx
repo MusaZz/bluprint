@@ -2,7 +2,7 @@
 import Product from "./Product";
 
 // Redux
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
 
 const Products = () => {
   const productsData = useSelector((state) => state.products);
@@ -26,7 +26,7 @@ const Products = () => {
   const filters = [];
 
   filters.push(...color, ...size, ...category);
-  
+
   return (
     <div className=" col-span-9 h-full space-y-5">
       <div className="flex items-center gap-6 w-full h-fit">

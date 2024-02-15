@@ -9,7 +9,7 @@ import { useState } from "react";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
-import { sizeActions } from "../../redux/slices/size";
+import { sizeActions } from "../../../../redux/slices/size";
 
 // Fake Data
 

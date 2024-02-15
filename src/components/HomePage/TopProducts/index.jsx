@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 
 // Components
-import Product from "../../../components/ProductsPage/Product";
+import Product from "../../ShopPage/Products/Product";
 import Button from "../Button";
 import SectionTitle from "../../Common/SectionTitle";
 

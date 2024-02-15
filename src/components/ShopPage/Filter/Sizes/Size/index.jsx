@@ -4,7 +4,9 @@ const Size = ({ title, size, click, selected, disabled = false }) => {
   return (
     <li
       className={`font-bold ${
-        selected && !disabled ? "bg-[#1D1D1D] text-white" : "bg-[#E5E5E5] text-black"
+        selected && !disabled
+          ? "bg-[#1D1D1D] text-white"
+          : "bg-[#E5E5E5] text-black"
       }  w-12 h-[30px] flex items-center justify-center  rounded-2xl ${
         disabled ? "opacity-50" : "opacity-100"
       }`}

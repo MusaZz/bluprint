@@ -9,7 +9,7 @@ import { BsChevronUp } from "react-icons/bs";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
-import { categoryActions } from "../../redux/slices/category";
+import { categoryActions } from "../../../../redux/slices/category";
 
 //Fake Data
 const fakeCategories = [

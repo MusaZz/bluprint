@@ -2,7 +2,7 @@
 import { PiShoppingCartBold } from "react-icons/pi";
 
 // Component
-import Size from "../ProductsPage/Size";
+import Size from "../ShopPage/Filter/Sizes/Size";;
 
 // Hooks
 import { useRef } from "react";

@@ -9,7 +9,7 @@ import { useState } from "react";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
-import { colorActions } from "../../redux/slices/color";
+import { colorActions } from "../../../../redux/slices/color";
 
 // Fake Data
 const fakeColors = [
