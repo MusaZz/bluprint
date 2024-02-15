@@ -39,7 +39,7 @@ const Header = () => {
       </Link>
       <nav>
         <ul className="h-full flex gap-20">
-          <Link to="/products">
+          <Link to="/shop">
             <NavLink link="Products" />
           </Link>
           <Link>

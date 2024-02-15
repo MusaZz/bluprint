@@ -6,7 +6,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
-import Shop from "../pages/Shop";
+import Shop from "../pages/Products";
 import Product from "../Pages/Product";
 import Cart from "../Pages/Cart";
 
