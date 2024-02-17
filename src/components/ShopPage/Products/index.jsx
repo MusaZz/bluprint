@@ -4,6 +4,7 @@ import Product from "./Product";
 
 // Redux
 import { useSelector } from "react-redux";
+import Navigation from "./Navigation";
 
 const Products = () => {
   const productsData = useSelector((state) => state.products);
@@ -40,7 +41,7 @@ const Products = () => {
   });
 
   return (
-    <div className=" col-span-9 h-full space-y-5">
+    <div className=" col-span-9 h-full space-y-5 pb-5">
       <div className="flex items-center gap-6 w-full h-fit">
         <h3 className="font-medium min-w-fit">Showing 2 results</h3>
         <ul className="flex items-center gap-2 flex-wrap">
@@ -68,6 +69,7 @@ const Products = () => {
           />
         ))}
       </div>
+      <Navigation />
     </div>
   );
 };
