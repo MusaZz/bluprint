@@ -8,23 +8,12 @@ import Navigation from "./Navigation";
 
 const Products = () => {
   const productsData = useSelector((state) => state.products);
-  const [fakeData, setFakeData] = useState();
 
   // console.log(productsData);
   const color = useSelector((state) => state.color);
 
   const size = useSelector((state) => state.size);
   const category = useSelector((state) => state.category);
-
-  // const sizeMapping = {
-  //   "Extra Small": "xs",
-  //   Small: "s",
-  //   Medium: "m",
-  //   Large: "l",
-  //   "Extra Large": "xl",
-  // };
-
-  // const newSizes = [...(size.map((s) => sizeMapping[s]) || null)];
 
   const filters = [];
 
@@ -39,6 +28,19 @@ const Products = () => {
   useEffect(() => {
     getFakeApiData();
   });
+
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 9;
+
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+
+  const currentProducts = productsData.slice(startIndex, endIndex);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
 
   return (
     <div className=" col-span-9 h-full space-y-5 pb-5">
@@ -56,7 +58,7 @@ const Products = () => {
         </ul>
       </div>
       <div className="grid grid-cols-12 gap-10">
-        {productsData.map((product) => (
+        {currentProducts.map((product) => (
           <Product
             key={product.id}
             id={product.id}
@@ -69,7 +71,13 @@ const Products = () => {
           />
         ))}
       </div>
-      <Navigation />
+      {productsData.length > productsPerPage && (
+        <Navigation
+          currentPage={currentPage}
+          totalPages={Math.ceil(productsData.length / productsPerPage)}
+          onPageChange={handlePageChange}
+        />
+      )}
     </div>
   );
 };
