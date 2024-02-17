@@ -42,7 +42,7 @@ const Products = () => {
   return (
     <div className=" col-span-9 h-full space-y-5">
       <div className="flex items-center gap-6 w-full h-fit">
-        <h3 className="font-medium min-w-fit">Showind 2 results</h3>
+        <h3 className="font-medium min-w-fit">Showing 2 results</h3>
         <ul className="flex items-center gap-2 flex-wrap">
           {filters.map((filter) => (
             <li key={filter}>
