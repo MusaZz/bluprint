@@ -5,8 +5,8 @@ import { AiFillMinusCircle } from "react-icons/ai";
 import { useState, useEffect, useRef } from "react";
 
 // Redux
-import { cartActions } from "../../redux/slices/cart";
-import store from "../../redux/store";
+import { cartActions } from "../../../../redux/slices/cart";
+import store from "../../../../redux/store";
 
 // Hot toast
 import toast from "react-hot-toast";
@@ -43,7 +43,7 @@ const CartItem = ({
 
   useEffect(() => {
     // Use dynamic import to load the image
-    import(`../../assets/${image}.png`)
+    import(`../../../../assets/${image}.png`)
       .then((module) => setImageSrc(module.default))
       .catch((error) => {
         console.error("Error loading image:", error);

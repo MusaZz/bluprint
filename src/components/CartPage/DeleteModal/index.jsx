@@ -1,6 +1,6 @@
 // Store
-import store from "../../redux/store";
-import { cartActions } from "../../redux/slices/cart";
+import store from "../../../redux/store";
+import { cartActions } from "../../../redux/slices/cart";
 
 // Redux
 import { useSelector } from "react-redux";
@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 // Toast
 import toast from "react-hot-toast";
 
-const DeleteModal = ({ setWantDelete}) => {
+const DeleteModal = ({ setWantDelete }) => {
   const { id, size } = useSelector((state) => state.cart);
 
   const dontWantDelete = (event) => {

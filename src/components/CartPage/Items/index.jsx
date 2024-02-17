@@ -1,12 +1,12 @@
 // Components
-import CartItem from "./CartItem";
+import Item from "./Item";
 
 const CartItems = ({ cartData, setWantDelete }) => {
   return (
     <div className="pb-10 flex gap-20  overflow-x-auto">
       {cartData.map((cartItem) => (
-        <CartItem
-        setWantDelete={setWantDelete}
+        <Item
+          setWantDelete={setWantDelete}
           key={cartItem.id + cartItem.size}
           name={cartItem.name}
           category={cartItem.category}
