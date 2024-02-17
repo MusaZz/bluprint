@@ -13,7 +13,7 @@ const TopProducts = () => {
     <section className="space-y-10 gap-0.5 flex flex-col">
       <SectionTitle title="Top Products" />
       <div className="grid grid-cols-12 gap-5">
-        {productsData.map((product) => (
+        {productsData.slice(0, 4).map((product) => (
           <Product
             page="home"
             key={product.id}
