@@ -1,5 +1,5 @@
 // Image
-import BlueLine from "../../assets/blue_line.png";
+import BlueLine from "../../../assets/blue_line.png";
 
 // Components
 import NewsletterForm from "./NewsletterForm";

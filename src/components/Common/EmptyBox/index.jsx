@@ -1,6 +1,6 @@
 // Image
 import { Link } from "react-router-dom";
-import Empty from "../../assets/empty_box.png";
+import Empty from "../../../assets/empty_box.png";
 
 const EmptyBox = () => {
   return (

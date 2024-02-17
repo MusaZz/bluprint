@@ -1,4 +1,5 @@
 // Components
+import { useEffect, useState } from "react";
 import Product from "./Product";
 
 // Redux
@@ -6,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const Products = () => {
   const productsData = useSelector((state) => state.products);
+  const [fakeData, setFakeData] = useState();
 
   // console.log(productsData);
   const color = useSelector((state) => state.color);
@@ -26,6 +28,16 @@ const Products = () => {
   const filters = [];
 
   filters.push(...color, ...size, ...category);
+
+  const getFakeApiData = () => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => setFakeData(json));
+  };
+
+  useEffect(() => {
+    getFakeApiData();
+  });
 
   return (
     <div className=" col-span-9 h-full space-y-5">

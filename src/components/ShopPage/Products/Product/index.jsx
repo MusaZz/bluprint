@@ -20,7 +20,7 @@ const Product = ({ image, alt, price, category, title, id, page }) => {
     <div className={`${page === "home" ? "col-span-3" : "col-span-4"}`}>
       <Link to={`/product/${id}`}>
         <div className=" mb-4 border border-neutral-200 overflow-hidden rounded-lg">
-          <img src={imageSrc} alt={alt} />
+          <img className=" w-full h-full object-contain aspect-[1/1] mix-blend-color" src={imageSrc} alt={alt} />
         </div>
         <div className="flex justify-between">
           <div>

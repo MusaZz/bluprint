@@ -1,7 +1,7 @@
 // Image
-import FooterLogo from "../../assets/footer_logo.png";
+import FooterLogo from "../../../assets/footer_logo.png";
 import FooterNavLink from "./FooterNavLink";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 const Footer = () => {
   return (
