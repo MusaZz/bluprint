@@ -5,29 +5,10 @@ import Product from "./Product";
 // Redux
 import { useSelector } from "react-redux";
 import Navigation from "./Navigation";
+import FilterButtons from "./FilterButtons";
 
 const Products = () => {
   const productsData = useSelector((state) => state.products);
-
-  // console.log(productsData);
-  const color = useSelector((state) => state.color);
-
-  const size = useSelector((state) => state.size);
-  const category = useSelector((state) => state.category);
-
-  const filters = [];
-
-  filters.push(...color, ...size, ...category);
-
-  const getFakeApiData = () => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setFakeData(json));
-  };
-
-  useEffect(() => {
-    getFakeApiData();
-  });
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -44,18 +25,11 @@ const Products = () => {
 
   return (
     <div className=" col-span-9 h-full space-y-5 pb-5">
-      <div className="flex items-center gap-6 w-full h-fit">
-        <h3 className="font-medium min-w-fit">Showing 2 results</h3>
-        <ul className="flex items-center gap-2 flex-wrap">
-          {filters.map((filter) => (
-            <li key={filter}>
-              <button className="flex gap-1 bg-[#1d1d1d] px-3 py-1 rounded-md text-sm text-white">
-                <span className="">{filter}</span>
-                <span className="text-white">x</span>
-              </button>
-            </li>
-          ))}
-        </ul>
+      <div className="flex items-center gap-6 w-full h-fit flex-wrap">
+        <h3 className="font-medium min-w-fit">
+          Showing {currentProducts.length} results
+        </h3>
+        <FilterButtons />
       </div>
       <div className="grid grid-cols-12 gap-10">
         {currentProducts.map((product) => (

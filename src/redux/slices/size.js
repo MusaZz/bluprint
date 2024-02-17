@@ -14,9 +14,20 @@ const size = createSlice({
         state.push(size);
       }
     },
+    removeSize: (state, action) => {
+      const size = action.payload;
+
+      if (!state.includes(size)) return;
+
+      const index = state.findIndex((s) => s === size);
+      state.splice(index, 1);
+    },
+    clearSizes: (state) => {
+      state.length = 0;
+    },
   },
 });
 
-export const sizeActions = size.actions;
+export const {addSize, removeSize, clearSizes} = size.actions;
 
 export default size.reducer;

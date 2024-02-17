@@ -8,8 +8,10 @@ import Category from "./Category";
 import { BsChevronUp } from "react-icons/bs";
 
 // Redux
-import { useDispatch, useSelector } from "react-redux";
-import { categoryActions } from "../../../../redux/slices/category";
+import { useSelector } from "react-redux";
+import store from "../../../../redux/store";
+import { addCategory } from "../../../../redux/slices/category";
+import { showCategory } from "../../../../redux/slices/filters";
 
 //Fake Data
 const fakeCategories = [
@@ -43,14 +45,13 @@ const Categories = () => {
 
   const state = useSelector((state) => state.category);
 
-  const dispatch = useDispatch();
-
   const toggleCategories = () => {
     setShowCategories(!showCategories);
   };
 
   const setCategory = (category) => {
-    dispatch(categoryActions.addCategory(category));
+    store.dispatch(addCategory(category));
+    store.dispatch(showCategory(category));
   };
 
   return (

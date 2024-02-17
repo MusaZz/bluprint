@@ -8,8 +8,10 @@ import Size from "./Size";
 import { useState } from "react";
 
 // Redux
-import { useDispatch, useSelector } from "react-redux";
-import { sizeActions } from "../../../../redux/slices/size";
+import { useSelector } from "react-redux";
+import store from "../../../../redux/store";
+import { addSize } from "../../../../redux/slices/size";
+import { showSize } from "../../../../redux/slices/filters";
 
 // Fake Data
 
@@ -49,18 +51,17 @@ const styles = {
 };
 
 const Colors = () => {
-  const [showSize, setShowSize] = useState(true);
+  const [showSizes, setShowSizes] = useState(true);
 
   const state = useSelector((state) => state.size);
 
-  const dispatch = useDispatch();
-
   const toggleSize = () => {
-    setShowSize(!showSize);
+    setShowSizes(!showSize);
   };
 
   const setSize = (size) => {
-    dispatch(sizeActions.addSize(size));
+    store.dispatch(addSize(size));
+    store.dispatch(showSize(size));
   };
 
   return (
@@ -69,12 +70,12 @@ const Colors = () => {
         <span className="font-bold">Size</span>
         <div>
           <BsChevronUp
-            className={`${styles.icon} ${!showSize && "rotate-180"}`}
+            className={`${styles.icon} ${!showSizes && "rotate-180"}`}
             color="black"
           />
         </div>
       </button>
-      {showSize && (
+      {showSizes && (
         <ul className={styles.ul}>
           {fakeSizes.map((size) => (
             <Size

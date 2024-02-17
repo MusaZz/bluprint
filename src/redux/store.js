@@ -9,6 +9,7 @@ import products from "./slices/products";
 import product from "./slices/product";
 import cart from "./slices/cart";
 import input from "./slices/input";
+import filters from "./slices/filters";
 
 const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ const store = configureStore({
     product,
     cart,
     input,
+    filters,
   },
 });
 

@@ -8,8 +8,10 @@ import Color from "./Color";
 import { useState } from "react";
 
 // Redux
-import { useDispatch, useSelector } from "react-redux";
-import { colorActions } from "../../../../redux/slices/color";
+import { useSelector } from "react-redux";
+import store from "../../../../redux/store";
+import { addColor } from "../../../../redux/slices/color";
+import { showColor } from "../../../../redux/slices/filters";
 
 // Fake Data
 const fakeColors = [
@@ -48,18 +50,17 @@ const styles = {
 };
 
 const Colors = () => {
-  const [showColor, setShowColor] = useState(true);
+  const [showColors, setShowColors] = useState(true);
 
   const state = useSelector((state) => state.color);
 
-  const dispatch = useDispatch();
-
   const toggleColor = () => {
-    setShowColor(!showColor);
+    setShowColors(!showColors);
   };
 
   const setColor = (color) => {
-    dispatch(colorActions.addColor(color));
+    store.dispatch(addColor(color));
+    store.dispatch(showColor(color));
   };
 
   return (
@@ -68,12 +69,12 @@ const Colors = () => {
         <span className="font-bold">Color</span>
         <div>
           <BsChevronUp
-            className={`${styles.icon} ${!showColor && "rotate-180"}`}
+            className={`${styles.icon} ${!showColors && "rotate-180"}`}
             color="black"
           />
         </div>
       </button>
-      {showColor && (
+      {showColors && (
         <ul className={styles.ul}>
           {fakeColors.map((color) => (
             <Color
