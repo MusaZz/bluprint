@@ -5,6 +5,9 @@ import Discount from "./Discount";
 // Image
 import YellowLine from "../../../assets/yellow_line.png";
 
+// Icon
+import { FaCheckCircle } from "react-icons/fa";
+
 const Checkout = ({ subtotal }) => {
   const shipping = 2;
   return (
@@ -36,12 +39,18 @@ const Checkout = ({ subtotal }) => {
           <img
             src={YellowLine}
             alt="line"
-            className="absolute -top-1/4 left-0 w-full aspect-[1/0.4]"
+            className="absolute top-[15%] scale-150 left-0 w-full"
           />
         </div>
       </ul>
 
-      
+      {/* Confirm Button */}
+      <button className=" rounded-lg bg-[#1d1d1d] w-fit flex items-center gap-44 px-[30px] py-[22px]">
+        <span className=" uppercase text-white font-black text-xl ">
+          confirm order
+        </span>
+        <FaCheckCircle className=" fill-white" />
+      </button>
     </div>
   );
 };
