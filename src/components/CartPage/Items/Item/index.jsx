@@ -11,7 +11,7 @@ import store from "../../../../redux/store";
 // Hot toast
 import toast from "react-hot-toast";
 
-const CartItem = ({
+const Item = ({
   name,
   category,
   image,
@@ -83,7 +83,7 @@ const CartItem = ({
             </div>
           </div>
           <div className="font-medium text-xl">
-            {counter} x {price} AZN
+            {counter} x {price} AZN{" "}
             <span className="font-bold">
               | {(counter * price).toFixed(2)} AZN
             </span>
@@ -120,4 +120,4 @@ const CartItem = ({
   );
 };
 
-export default CartItem;
+export default Item;

@@ -1,6 +1,6 @@
 // Components
 import SectionTitle from "../Common/SectionTitle";
-import CartItems from "./Items";
+import Items from "./Items";
 import EmptyBox from "../../components/Common/EmptyBox";
 import Button from "../../components/HomePage/Button";
 
@@ -30,7 +30,7 @@ const CartPage = () => {
         <SectionTitle title="Cart" />
         <div className="border-y border-neutral-100 py-10">
           {cartData.length ? (
-            <CartItems setWantDelete={setWantDelete} cartData={cartData} />
+            <Items setWantDelete={setWantDelete} cartData={cartData} />
           ) : (
             <EmptyBox />
           )}

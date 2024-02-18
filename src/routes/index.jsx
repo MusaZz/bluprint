@@ -3,12 +3,13 @@ import AnonymousLayout from "../layouts/AnonymousLayout";
 import MainLayout from "../layouts/MainLayout";
 
 // Pages
-import Home from "../Pages/Home";
-import Login from "../Pages/Login";
-import Register from "../Pages/Register";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 import Shop from "../pages/Shop";
-import Product from "../Pages/Product";
-import Cart from "../Pages/Cart";
+import Product from "../pages/Product";
+import Cart from "../pages/Cart";
+import Checkout from "../pages/Checkout";
 
 // Generate Routes
 import { renderRoutes } from "./generate-routes";
@@ -62,6 +63,13 @@ export const routes = [
         title: "Cart page",
         component: Cart,
         path: "/cart",
+        isPublic: true,
+      },
+      {
+        name: "checkout",
+        title: "Checkout page",
+        component: Checkout,
+        path: "/checkout",
         isPublic: true,
       },
     ],

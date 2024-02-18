@@ -1,12 +1,11 @@
 // Components
 import Item from "./Item";
 
-const Items = ({ cartData, setWantDelete }) => {
+const Items = ({ cartData }) => {
   return (
-    <div className="pb-10 flex gap-20  overflow-x-auto">
+    <div className="pr-10  grid grid-rows-2 gap-20 ">
       {cartData.map((cartItem) => (
         <Item
-          setWantDelete={setWantDelete}
           key={cartItem.id + cartItem.size}
           name={cartItem.name}
           category={cartItem.category}
