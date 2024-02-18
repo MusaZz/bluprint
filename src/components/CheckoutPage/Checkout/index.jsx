@@ -4,7 +4,7 @@ import Discount from "./Discount";
 
 const Checkout = () => {
   return (
-    <div>
+    <div className=" flex flex-col gap-8">
       <Information />
       <Discount />
     </div>
