@@ -44,7 +44,7 @@ const CartPage = () => {
                 <img
                   src={YellowLine}
                   alt="line"
-                  className="absolute -top-1/4 left-0"
+                  className="absolute -top-1/4 left-0 w-full"
                 />
               </div>
             </div>
