@@ -56,7 +56,7 @@ const Colors = () => {
   const state = useSelector((state) => state.size);
 
   const toggleSize = () => {
-    setShowSizes(!showSize);
+    setShowSizes(!showSizes);
   };
 
   const setSize = (size) => {
