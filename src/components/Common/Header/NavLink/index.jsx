@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Image
-import CapsHoverImage from "../../../assets/caps_hover_image.png";
+import CapsHoverImage from "../../../../assets/caps_hover_image.png";
 
 const NavLink = ({ link, dropdown }) => {
   return (
@@ -61,11 +61,7 @@ const NavLink = ({ link, dropdown }) => {
               </li>
             </ul>
             <div className=" h-[241px] w-[515px] rounded-lg overflow-hidden">
-              <img
-                className="w-full h-full"
-                src={CapsHoverImage}
-                alt="caps"
-              />
+              <img className="w-full h-full" src={CapsHoverImage} alt="caps" />
             </div>
           </div>
         </div>

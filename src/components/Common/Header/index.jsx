@@ -79,7 +79,9 @@ const Header = () => {
           <FiSearch className="stroke-white scale-125 " />
         </button>
       </div>
-      {isSearch && <SearchInput isSearch={isSearch} setIsSearch={setIsSearch} />}
+      {isSearch && (
+        <SearchInput isSearch={isSearch} setIsSearch={setIsSearch} />
+      )}
     </div>
   );
 };
